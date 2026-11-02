@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biodata Pribadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e9eef2;
+    --ink: #14202b;
+    --muted: #51606e;
+    --accent: #2447d6;
+    --pop: #f2b632;
+    --card: #ffffff;
+    --line: #cfd8e0;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--pop); outline-offset: 3px; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  /* Navigasi */
+  nav { background: var(--ink); }
+  nav .wrap { display: flex; gap: 22px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+  nav a { color: #fff; text-decoration: none; font-weight: 600; }
+  nav a:hover { color: var(--pop); }
+
+  /* Hero */
+  header { padding: 56px 0 40px; }
+  .hero { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: center; }
+  .avatar {
+    width: 220px; height: 220px; border-radius: 50%;
+    object-fit: cover; background: var(--line);
+    border: 6px solid var(--pop);
+  }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; }
+  .tagline { margin-top: 14px; color: var(--muted); font-size: 1.15rem; max-width: 46ch; }
+
+  /* Bagian */
+  section { padding: 36px 0; }
+  h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.01em; }
+  h2::after { content: ""; display: block; width: 56px; height: 5px; background: var(--accent); margin-top: 8px; border-radius: 3px; }
+
+  /* Biodata */
+  .card { background: var(--card); border-radius: var(--radius); padding: 8px 26px; border: 1px solid var(--line); }
+  dl { display: grid; grid-template-columns: 180px 1fr; }
+  dt, dd { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  dt { font-weight: 600; color: var(--muted); }
+  dl > :nth-last-child(-n+2) { border-bottom: none; }
+
+  /* Hobi */
+  .hobi { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; }
+  .hobi li { background: var(--card); border: 2px solid var(--ink); border-radius: 999px; padding: 8px 20px; font-weight: 600; }
+  .hobi li:nth-child(odd) { background: var(--pop); }
+
+  /* Galeri */
+  .foto-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+  figure { background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  figure img, figure video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #dbe3ea; }
+  figcaption { padding: 10px 14px; font-size: .95rem; color: var(--muted); }
+  .sub { font-size: 1.1rem; font-weight: 600; margin: 28px 0 12px; }
+
+  footer { background: var(--ink); color: #c9d3dc; padding: 26px 0; margin-top: 40px; text-align: center; }
+
+  @media (max-width: 700px) {
+    .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .avatar { width: 160px; height: 160px; }
+    dl { grid-template-columns: 1fr; }
+    dt { border-bottom: none; padding-bottom: 0; }
+    dd { padding-top: 2px; }
+    dl > :nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+    dl > :last-child { border-bottom: none; }
+    .foto-grid, .video-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#biodata">Biodata</a>
+    <a href="#hobi">Hobi</a>
+    <a href="#galeri">Galeri</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero">
+    <img class="avatar" src="foto/profil.jpg" alt="Foto profil" onerror="this.style.visibility='hidden'">
+    <div>
+      <h1>Nama Lengkap Anda</h1>
+      <p class="tagline">Tulis satu kalimat singkat tentang diri Anda di sini.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="biodata">
+    <h2>Biodata</h2>
+    <div class="card">
+      <dl>
+        <dt>Nama lengkap</dt><dd>Elia Elvan Rian</dd>
+        <dt>Tempat, tanggal lahir</dt><dd>Pagatan, 11 Januari 2005</dd>
+        <dt>Jenis kelamin</dt><dd>Laki-laki</dd>
+        <dt>Agama</dt><dd>Kristen</dd>
+        <dt>Alamat</dt><dd>karang anjar, Kalimantan Selatan</dd>
+        <dt>Pendidikan</dt><dd>universitas lambung mangkurat</dd>
+        <dt>Email</dt><dd><a href="mailto:email@contoh.com">eliaelvanrian12@gmail.com</a></dd>
+        <dt>Telepon</dt><dd>081345174894</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="hobi">
+    <h2>Hobi</h2>
+    <ul class="hobi">
+      <li>Memancing</li>
+      <li>Bermain game</li>
+      <li>Olahraga</li>
+      <li>Fotografi</li>
+      <li>Musik</li>
+    </ul>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri</h2>
+
+    <p class="sub">Foto</p>
+    <div class="foto-grid">
+      <figure><img src="foto/foto1.jpg" alt="Foto 1" loading="lazy"><figcaption>Foto 1: tulis keterangan</figcaption></figure>
+      <figure><img src="foto/foto2.jpg" alt="Foto 2" loading="lazy"><figcaption>Foto 2: tulis keterangan</figcaption></figure>
+      <figure><img src="foto/foto3.jpg" alt="Foto 3" loading="lazy"><figcaption>Foto 3: tulis keterangan</figcaption></figure>
+      <figure><img src="foto/foto4.jpg" alt="Foto 4" loading="lazy"><figcaption>Foto 4: tulis keterangan</figcaption></figure>
+    </div>
+
+    <p class="sub">Video</p>
+    <div class="video-grid">
+      <figure>
+        <video controls preload="metadata"><source src="video/video1.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+        <figcaption>Video 1: tulis keterangan</figcaption>
+      </figure>
+      <figure>
+        <video controls preload="metadata"><source src="video/video2.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+        <figcaption>Video 2: tulis keterangan</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Nama Lengkap Anda</div>
+</footer>
+
+</body>
+</html>
